@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class Main extends JPanel {
-    private final String[] strings = {"Привет", "Мир", "Java", "Swing", "AWT"};
+    private final String[] strings = {"Привет", "Мир", "Java", "Юра", "не", "ставь", "нки","плииииииз"};
     private final int[] xPositions;
     private final int[] yPositions;
     private final int[] xVelocities;
@@ -21,9 +21,9 @@ public class Main extends JPanel {
 
         for (int i = 0; i < stringCount; i++) {
             xPositions[i] = random.nextInt(300);
-            yPositions[i] = random.nextInt(300);
-            xVelocities[i] = random.nextInt(5) + 1;
-            yVelocities[i] = random.nextInt(5) + 1;
+            yPositions[i] = random.nextInt(300)+10;
+            xVelocities[i] = random.nextInt(6) + 1;
+            yVelocities[i] = random.nextInt(6) + 1;
         }
 
         Timer timer = new Timer(30, new ActionListener() {
@@ -36,7 +36,7 @@ public class Main extends JPanel {
                     if (xPositions[i] < 0 ||  xPositions[i] > getWidth() - 50) {
                         xVelocities[i] *= -1;
                     }
-                    if (yPositions[i] < 0  || yPositions[i] > getHeight() - 10) {
+                    if (yPositions[i] < 10 || yPositions[i] > getHeight()) {
                         yVelocities[i] *= -1;
                     }
                 }
